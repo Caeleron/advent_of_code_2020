@@ -17,3 +17,14 @@ how much better can we get it? Is linear time possible? I haven't found a reason
 to do it. If I do come across a way, I might code it and throw it in here, but for now I simply adapted Part 1's
 solution to be generic to any sum as opposed to just 2020. Since that runs in linear time, running it once for every
 input makes it quadratic. It makes me wonder what the running time of the generic n-sum problem is...
+
+## Day 2 - Password Philosophy
+### Part 1
+This was a simple exercise in string manipulation. Most of the code is breaking up the input string into the correct
+pieces before parsing them into the correct types. Using `filter_map` to toss out lines that don't parse correctly made
+things much easier, so I could simply apply `?` operator on everything and the FilterMap iterator will pull the value
+out of the Option for me.
+
+### Part 2
+Surprisingly, this didn't take much modification. I only changed the name of some struct fields within the parser. Then,
+I replaced the character counting code with index-and-check code, and it worked like a charm. 
