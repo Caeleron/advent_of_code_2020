@@ -28,3 +28,20 @@ out of the Option for me.
 ### Part 2
 Surprisingly, this didn't take much modification. I only changed the name of some struct fields within the parser. Then,
 I replaced the character counting code with index-and-check code, and it worked like a charm. 
+
+## Day 3 - Toboggan Trajectory
+### Part 1
+Somehow, the tools provided by Rust has made this puzzle incredibly easy. In fact, the code I wrote for this part is
+purely functional except for the fact that I threw the final count in a variable before printing it out. I could have
+put that entire thing in the `println!()` macro, but it was easier to throw it into a variable when writing it. Also,
+using an iterator over the lines of input as an iterator over the y coordinate proved to be helpful here and later.
+
+### Part 2
+I split out my code from part 1 into its own function. I could then make it more general and able to handle all sorts of
+different slopes. Getting the lines iterator to perform a "move down n" operation took a bit of experimentation before I
+was able to get it just right. The `step_by()` function that the Iterator types provide really helped here.
+
+## Day 4 - Passport Processing
+The two parts are similar enough, so I won't make separate sections for them. The name of the game is input validation,
+and there is plenty to be had here. I got to experiment with a few tricks; namely, folding a partially constructed
+struct and a list of completed structs, and using `Option` to determine if a field was valid or even supplied.
